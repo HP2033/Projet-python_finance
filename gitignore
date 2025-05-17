@@ -1,0 +1,22 @@
+
+# Fichiers de modèle / encodage
+*.pkl
+
+# Données locales
+*.csv
+
+# Fichiers Python cache
+__pycache__/
+*.py[cod]
+
+# Fichiers Jupyter cache
+.ipynb_checkpoints/
+
+# Dossiers d'environnement virtuel
+.env/
+.venv/
+env/
+venv/
+
+# Fichiers de logs éventuels
+*.log
