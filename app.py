@@ -21,12 +21,14 @@ debt = st.number_input("Montant de la dette mensuelle ($)", min_value=0.0, max_v
 purpose = st.selectbox("Objet du prêt", label_encoders['purpose'].classes_)
 inq_last_6mths = st.number_input("Nombre de demandes de crédit (6 derniers mois)", min_value=0)
 
-# Calcul automatique du DTI
+# Calcul automatique du DTI (limité à 30%)
 if annual_inc > 0:
-    dti = min(debt / (annual_inc / 12), 57.14)  # DTI limité à 57.14 comme dans le dataset
+    dti = min((debt * 12) / annual_inc, 30.0)  # Limite stricte à 30 %
 else:
     dti = 0.0
-st.markdown(f"📊 DTI calculé automatiquement : **{dti:.2f} %**")
+
+dti = round(dti, 2)
+st.markdown(f"📊 DTI calculé automatiquement : **{dti:.2f} %** (max autorisé : 30.0)")
 
 # Encodage
 emp_length_enc = label_encoders['emp_length'].transform([emp_length])[0]
@@ -41,7 +43,7 @@ X_input = pd.DataFrame([[
     'annual_inc', 'purpose', 'inq_last_6mths'
 ])
 
-# Réordonner les colonnes pour correspondre au modèle
+# Réordonner les colonnes
 X_input = X_input[feature_order]
 
 # Standardiser

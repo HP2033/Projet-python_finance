@@ -73,9 +73,11 @@ pip install -r requirements.txt
 
 ### 2. Lancer l’application localement
 ```bash
-streamlit run app.py
+ streamlit run app.py
+-
 ```
-
+-Données de saisi limité au données existant de la data
+-dti limité à 30%
 ---
 
 ## ## 🗂 Structure du Dépôt
