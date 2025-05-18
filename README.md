@@ -21,6 +21,14 @@ Développer une application web interactive pour prédire le risque de défaut �
   - Rappel : 86%
   - F1-score : 87%
   - Équilibre parfait entre les classes grâce à SMOTE
+ 
+    ## Importance des variables
+-  int_rate (taux d’intérêt) : plus influente
+-  annual_inc (revenu annuel) : forte contribution
+- dti (dette/revenu) : très significatif
+- loan_amnt et emp_length : impact modéré
+- purpose(Objet du crédit) : effet faible
+- term` : influence minimale
 
 
 ## 🚀 Lancer l’Application
