@@ -102,7 +102,7 @@ pip install -r requirements.txt
 ## 👥 Auteurs
 
 - Djamal Eddine B.HASSANI
--
+- Honoré PALENFO
 -
 - Projet Python - Université [anné2025]
 -Prof :Alexis Bogroff
